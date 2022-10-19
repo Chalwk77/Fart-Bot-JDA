@@ -9,11 +9,11 @@ import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import java.util.HashMap;
 import java.util.TimerTask;
 
+import static com.chalwk.Listeners.EventListeners.member_votes;
 import static com.chalwk.Main.getJDA;
 import static com.chalwk.Toot.channelID;
 import static com.chalwk.Toot.embedID;
 import static com.chalwk.Utilities.Members.getVotes;
-import static com.chalwk.Listeners.EventListeners.member_votes;
 
 public class CalculateVotes {
 
@@ -24,35 +24,38 @@ public class CalculateVotes {
         @Override
         public void run() {
 
-            HashMap voteResults = getVotes();
+            TextChannel channel = jda.getTextChannelById(channelID);
+            if (channel != null) {
 
-            Object winner = null;
-            int winnerVotes = 0;
-            for (Object memberID : voteResults.keySet()) {
-                int votes = (int) voteResults.get(memberID);
-                if (votes > winnerVotes) {
-                    winnerVotes = votes;
-                    winner = memberID;
+                HashMap voteResults = getVotes();
+
+                Object winner = null;
+                int winnerVotes = 0;
+                for (Object memberID : voteResults.keySet()) {
+                    int votes = (int) voteResults.get(memberID);
+                    if (votes > winnerVotes) {
+                        winnerVotes = votes;
+                        winner = memberID;
+                    }
                 }
+
+                if (winner != null) {
+
+                    Object finalWinner = winner;
+                    channel.retrieveMessageById(embedID).queue(message -> {
+                        message.delete().queue();
+
+                        Member member = jda.getGuilds().get(0).getMemberById(finalWinner.toString());
+                        String name = member.getEffectiveName();
+
+                        EmbedBuilder embed = ResultsEmbed.newEmbed(name);
+                        channel.sendMessageEmbeds(embed.build()).queue();
+                    });
+                }
+
+                voteResults.clear();
+                member_votes.clear();
             }
-
-            if (winner != null) {
-
-                Member member = jda.getGuilds().get(0).getMemberById(winner.toString());
-                TextChannel channel = jda.getTextChannelById(channelID);
-                channel.retrieveMessageById(embedID).queue(message -> {
-
-                    message.delete().queue();
-
-                    String name = member.getEffectiveName();
-                    EmbedBuilder embed = ResultsEmbed.newEmbed(name);
-
-                    channel.sendMessageEmbeds(embed.build()).queue();
-                });
-            }
-
-            voteResults.clear();
-            member_votes.clear();
         }
     }
 }

@@ -87,7 +87,7 @@ public class Toot {
 
 
             // Restart the timer:
-            //NewTimer.fartTimer();
+            NewTimer.fartTimer();
             NewTimer.voteTimer();
         }
     }

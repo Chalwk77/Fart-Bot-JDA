@@ -1,10 +1,10 @@
 {
   "time_between_farts": [
-    5,
-    5
+    3600,
+    86400
   ],
   "number_of_candidates": 5,
-  "time_to_vote": 5,
+  "time_to_vote": 15,
   "fart_channel": "1018432875722448996",
   "fart_role": "fart",
   "role_duration": 30,

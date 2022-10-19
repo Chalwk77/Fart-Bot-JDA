@@ -11,7 +11,7 @@ public class ResultsEmbed {
         EmbedBuilder embed = new EmbedBuilder();
 
         String title = settings.getTitle();
-        String description = String.valueOf(settings.getDescription());
+        String description = settings.getDescription();
 
         description = description.replace("$member", winner);
 
