@@ -1,0 +1,31 @@
+{
+  "time_between_farts": [
+    5,
+    5
+  ],
+  "number_of_candidates": 5,
+  "time_to_vote": 5,
+  "fart_channel": "1018432875722448996",
+  "fart_role": "fart",
+  "role_duration": 30,
+  "nickname": "Smelly",
+  "fart_embed": {
+    "title": "💨 \uD83D\uDCA9 FRAAAP \uD83D\uDCA9 💨",
+    "color": "0xc27c0e",
+    "fields": {
+      "field": {
+        "name": "",
+        "value": "**Someone farted.** Vote to blame someone!",
+        "inline": true
+      }
+    },
+    "footer": {
+      "text": "CLICK A BUTTON TO VOTE"
+    },
+    "image": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4d87b0f4-ae26-4b18-835c-af3a7ce1349f/dcaryjn-0fe92d98-ee39-4592-9c58-efa86f683f9e.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzRkODdiMGY0LWFlMjYtNGIxOC04MzVjLWFmM2E3Y2UxMzQ5ZlwvZGNhcnlqbi0wZmU5MmQ5OC1lZTM5LTQ1OTItOWM1OC1lZmE4NmY2ODNmOWUucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.2hGAukF0Misytk3k-Yw09ZUQ-aKxGFy_JfpKGNKmbio"
+  },
+  "results_embed": {
+    "title": "🗳️ THE TRIBE HAS SPOKEN 🗳️",
+    "description": "$member has been blamed for farting! He/She gets a smelly role and title."
+  }
+}

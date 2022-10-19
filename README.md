@@ -1,2 +1,1 @@
-# Fart-Bot-JDA-
-A custom Discord bot for a friend.
+#Fart Bot Discord Bot (using JDA framework)
